@@ -1,0 +1,55 @@
+.tags-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 48px;
+    width: 480px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    height: 60px;
+    width: 150px;
+    font-size: 14px;
+    padding: 4px;
+}
+
+#tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+
+.tag {
+    width: auto;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0 8px;
+    font-size: 14px;
+    list-style: none;
+    border-radius: 6px;
+    margin: 0 8px 8px 0;
+    background: #0e8ea5;
+}
+
+.tag-title {
+    margin: 1px 0 2px 0;
+
+}
+
+.tag-close-icon {
+    display: block;
+    text-align: center;
+    justify-content: space-around;
+    margin-left: 8px;
+    color: red;
+    border-radius: 60%;
+    background: #fff;
+}
