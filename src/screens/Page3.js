@@ -1,4 +1,4 @@
-import { TextField, Typography, Box, Button, Grid, FormControl, FormControlLabel, Radio, FormLabel, RadioGroup } from "@mui/material";
+import { Typography, Box, Button, Grid, Radio} from "@mui/material";
 import React, { useState } from "react";
 import { GiSparkles } from 'react-icons/gi'
 import { URL } from '../utils/Api';
@@ -8,15 +8,15 @@ import './Tags.css';
 
 const TagsInput = (props) => {
 
-    const [tags, setTags] = React.useState(props.tagList);
+    //const [tags, setTags] = React.useState(props.tagList);
     const removeTags = (indexToRemove) => {
-        setTags([...tags.filter((_, index) => index !== indexToRemove)]);//if index is not equal to indexToRemove then those elements stay, if index is equal to indexToRemove then that element is removed
-        props.selectedTags([...tags.filter((_, index) => index !== indexToRemove)])
+        props.setRoles([...props.roles.filter((_, index) => index !== indexToRemove)]);//if index is not equal to indexToRemove then those elements stay, if index is equal to indexToRemove then that element is removed
+        props.selectedTags([...props.roles.filter((_, index) => index !== indexToRemove)])
     };
     const addTags = (e) => {
         if (e.target.value !== '') {
-            setTags([...tags, e.target.value]);
-            props.selectedTags([...tags, e.target.value]);
+            props.setRoles([...props.roles, e.target.value]);
+            props.selectedTags([...props.roles, e.target.value]);
             e.target.value = '';
         }
     };
@@ -24,10 +24,10 @@ const TagsInput = (props) => {
         <div className="tags-input">
             <input type="text" onKeyUp={(e) => e.key === "Enter" ? addTags(e) : null}
                 placeholder=" Add Tags"
-                value={props.roles} onChange={(e) => props.setRoles([...tags])}
+                value={props.roles} onChange={(e) => {props.setRoles([e.target.value]); e.target.value = '';}}
             />
             <ul id="tags">
-                {tags.map((tag, index) => (
+                {props.roles.map((tag, index) => (
                     <li key={index} className="tag">
                         <span className="tag-title">{tag}</span>
                         <span className='tag-close-icon'
@@ -45,7 +45,7 @@ const TagsInput = (props) => {
 const Page3 = () => {
     const navigate = useNavigate();
     const [setLoading] = useState(true);
-    const [roles, setRoles] = useState([""]);
+    const [roles, setRoles] = useState(["ML Developer"]);
     const [experience, setExperience] = useState("");
     const [fill, setFill] = useState(true); //for dots
 
@@ -90,7 +90,7 @@ const Page3 = () => {
     return (
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
             <Typography>Roles you are looking for?<GiSparkles /></Typography>
-            <TagsInput selectedTags={selectedTags} tagList={['Data Scientist', 'ML Developer']} roles={roles} setRoles={setRoles} />
+            <TagsInput selectedTags={selectedTags} tagList={["ML Developer"]} roles={roles} setRoles={setRoles} />
             <Typography>Trending Roles: </Typography>
             <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
                 <Box sx={{ height: "30px", backgroundColor: "cyan", mr: "2px", padding: "2px 2px 2px 2px" }}>Web Developer</Box>{" "}
