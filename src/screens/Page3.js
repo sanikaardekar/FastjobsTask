@@ -1,11 +1,12 @@
 import { Typography, Card, Button, Grid, Box } from "@mui/material";
 import React, { useState } from "react";
 import { GiSparkles } from 'react-icons/gi'
+import { GrCaretNext } from 'react-icons/gr';
 import { URL } from '../utils/Api';
 import { useNavigate } from 'react-router-dom';
 import ClearIcon from '@mui/icons-material/Clear';
 import './Tags.css';
-
+import rolesSvg from '../assets/roles.svg';
 
 const TagsInput = (props) => {
 
@@ -89,45 +90,55 @@ const Page3 = () => {
         console.log(tags);
     };
     return (
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-            <Typography>Roles you are looking for?<GiSparkles /></Typography>
-            <TagsInput selectedTags={selectedTags} tagList={["ML Developer"]} roles={roles} setRoles={setRoles} />
-            <Typography fontFamily="Poppins">Trending Roles: </Typography>
-            <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
-                <Card sx={{ height: "30px", mr: "4px", padding: "2px 4px 4px 4px", borderRadius:"5px", color:"#6776FF" }}>Web Developer</Card>{" "}
-                <Card sx={{ height: "30px", mr: "4px", padding: "2px 4px 4px 4px", borderRadius:"5px", color:"#6776FF" }}>UI Developer</Card>{" "}
-            </Grid>
-            <Typography>How many years of experience?<GiSparkles /></Typography>    
-            <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
-            <label>
-                <input type="radio" name="experience" value="Fresher" checked={experience === "male"} onChange={(e) => setExperience(e.target.value)} required />
-                <Box>Fresher</Box>
-            </label>
-            {" "}
-            <label>
-                <input type="radio" name="experience" value="1-3 years" checked={experience === "female"} onChange={(e) => setExperience(e.target.value)} required />
-                <Box>1-3 years</Box>
-            </label>
-            {" "}
-            <label>
-                <input type="radio" name="experience" value="3-6 years" checked={experience === "male"} onChange={(e) => setExperience(e.target.value)} required />
-                <Box>3-6 years</Box>
-            </label>
-            {" "}
-            <label>
-                <input type="radio" name="experience" value="6+ years" checked={experience === "female"} onChange={(e) => setExperience(e.target.value)} required />
-                <Box>6+ years</Box>
-            </label>
-            </Grid>
-            <Button
-                type="submit"
-                size="medium"
-                variant="contained"
-                sx={{ ml: 2, mt: 2, mb: 1 }}
-            >
-                Next
-            </Button>
-        </Box>
+        <Grid container className="background-pic">
+            <div className="root">
+                <Grid item sm={12} md={12} className="main">
+                    <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                        <Typography>Roles you are looking for?<GiSparkles /></Typography>
+                        <TagsInput selectedTags={selectedTags} tagList={["ML Developer"]} roles={roles} setRoles={setRoles} />
+                        <Typography fontFamily="Poppins">Trending Roles: </Typography>
+                        <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
+                            <Card sx={{ height: "30px", mr: "4px", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF" }}>Web Developer</Card>{" "}
+                            <Card sx={{ height: "30px", mr: "4px", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF" }}>UI Developer</Card>{" "}
+                        </Grid>
+                        <Typography>How many years of experience?<GiSparkles /></Typography>
+                        <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
+                            <label>
+                                <input type="radio" name="experience" value="Fresher" checked={experience === "male"} onChange={(e) => setExperience(e.target.value)} required />
+                                <Box>Fresher</Box>
+                            </label>
+                            {" "}
+                            <label>
+                                <input type="radio" name="experience" value="1-3 years" checked={experience === "female"} onChange={(e) => setExperience(e.target.value)} required />
+                                <Box>1-3 years</Box>
+                            </label>
+                            {" "}
+                            <label>
+                                <input type="radio" name="experience" value="3-6 years" checked={experience === "male"} onChange={(e) => setExperience(e.target.value)} required />
+                                <Box>3-6 years</Box>
+                            </label>
+                            {" "}
+                            <label>
+                                <input type="radio" name="experience" value="6+ years" checked={experience === "female"} onChange={(e) => setExperience(e.target.value)} required />
+                                <Box>6+ years</Box>
+                            </label>
+                        </Grid>
+                        <Button
+                            type="submit"
+                            size="medium"
+                            variant="contained"
+                            sx={{ ml: 2, mt: 2, mb: 1 }}
+                            endIcon={<GrCaretNext style={{ fill: "white" }} />}
+                        >
+                            Next
+                        </Button>
+                    </Box>
+                    <Grid item sm={6} md={8} className="hello">
+                        <img style={{ height: "25vh", marginLeft: "0px" }} src={rolesSvg} alt="hello" />
+                    </Grid>
+                </Grid>
+            </div>
+        </Grid>
     )
 }
 export default Page3;

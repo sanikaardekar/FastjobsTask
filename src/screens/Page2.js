@@ -1,8 +1,11 @@
 import { TextField, Typography, Box, Button, Grid } from "@mui/material";
 import { useState } from "react";
-import { GiSparkles } from 'react-icons/gi'
+import { GiSparkles } from 'react-icons/gi';
+import { GrCaretNext } from 'react-icons/gr';
 import { URL } from '../utils/Api';
 import { useNavigate } from 'react-router-dom';
+import '../App.css'
+import location from '../assets/location.svg'
 
 const Page2 = () => {
     const navigate = useNavigate();
@@ -48,46 +51,57 @@ const Page2 = () => {
 
     return (
         <>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                <Typography>Where can we reach you?<GiSparkles /></Typography>
-                <TextField
-                    label="Email"
-                    id="email"
-                    type="email"
-                    size="small"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    autoFocus
-                    required
-                />
-                <Typography>Preferred city to work?<GiSparkles /></Typography>
-                <TextField
-                    label="City"
-                    id="city"
-                    type="text"
-                    size="small"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    autoFocus
-                    required
-                />
-                <Typography>Top cities you may prefer: </Typography>
-                <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
-                    <Box sx={{ height: "30px", backgroundColor: "cyan", mr: "2px", padding: "2px 2px 2px 2px" }}>Mumbai</Box>{" "}
-                    <Box>Bengaluru</Box>{" "}
-                    <Box>Pune</Box>{" "}
-                    <Box>Delhi</Box>{" "}
-                </Grid>
+            <Grid container className="background-pic">
+                <div className="root">
+                    <Grid item sm={12} md={12} className="main">
+                        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                            <Typography>Where can we reach you?<GiSparkles /></Typography>
+                            <TextField
+                                label="Email"
+                                id="email"
+                                type="email"
+                                size="small"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                autoFocus
+                                required
+                            />
+                            <Typography>Preferred city to work?<GiSparkles /></Typography>
+                            <TextField
+                                label="City"
+                                id="city"
+                                type="text"
+                                size="small"
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
+                                autoFocus
+                                required
+                            />
+                            <Typography>Top cities you may prefer: </Typography>
+                            <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
+                                <Box sx={{ height: "30px", backgroundColor: "cyan", mr: "2px", padding: "2px 2px 2px 2px" }}>Mumbai</Box>{" "}
+                                <Box>Bengaluru</Box>{" "}
+                                <Box>Pune</Box>{" "}
+                                <Box>Delhi</Box>{" "}
+                            </Grid>
 
-                <Button
-                    type="submit"
-                    size="medium"
-                    variant="contained"
-                    sx={{ ml: 2, mt: 2, mb: 1 }}
-                >
-                    Next
-                </Button>
-            </Box>
+                            <Button
+                                type="submit"
+                                size="medium"
+                                variant="contained"
+                                sx={{ ml: 2, mt: 2, mb: 1 }}
+                                endIcon={<GrCaretNext style={{fill:"white"}}/>}
+                            >
+                                Next
+                            </Button>
+                        </Box>
+
+                        <Grid item sm={6} md={8} className="hello">
+                            <img style={{ height: "30vh", marginLeft:"200px" }} src={location} alt="hello" />
+                        </Grid>
+                    </Grid>
+                </div>
+            </Grid>
         </>
     )
 }

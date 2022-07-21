@@ -1,4 +1,4 @@
-import { TextField, Typography, Box, IconButton, Grid } from "@mui/material";
+import { TextField, Typography, Box, Button, Grid } from "@mui/material";
 import { useState } from "react";
 import { GiSparkles } from 'react-icons/gi'
 import { GrCaretNext } from 'react-icons/gr'
@@ -53,7 +53,7 @@ const Page1 = () => {
 
     return (
         <>
-            <Grid container className="background-pic-page1">
+            <Grid container className="background-pic">
                 <div className="root">
                     <Grid item sm={12} md={12} className="main">
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
@@ -80,14 +80,15 @@ const Page1 = () => {
                                 <img src={female} alt="Option 2" />
                             </label>
 
-                            <IconButton
+                            <Button
                                 type="submit"
                                 size="medium"
                                 variant="contained"
                                 sx={{ ml: 2, mt: 2, mb: 1 }}
+                                endIcon={<GrCaretNext style={{fill:"white"}}/>}
                             >
-                                <GrCaretNext />
-                            </IconButton>
+                                Next
+                            </Button>
                         </Box>
                         <Grid item sm={6} md={8} className="hello">
                             <img style={{ height: "30vh", marginLeft:"150px" }} src={hello} alt="hello" />
