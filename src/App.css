@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@700&display=swap');
 img{
     height: 100px;
 }
@@ -14,4 +15,40 @@ img{
 
 [type=radio]:checked+img {
     outline: 2px solid black;
+}
+.background-pic-page1{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    content: ' ';
+    display: block;
+    /* opacity: 0.9; */
+    background-image: url(./assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow:hidden
+}
+.root{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    width:100vw;
+}
+.main{
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    margin-left: 100px !important; 
+    margin-top: 120px !important;
+}
+@media screen and (min-width: 360px) and (max-width: 768px){
+    .main{
+        margin-top: 100px !important;
+        margin-left: 70px !important;
+    }
+    .hello{
+        display: none;
+    }
 }

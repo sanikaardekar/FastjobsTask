@@ -1,10 +1,10 @@
-import { TextField, Typography, Box, Button } from "@mui/material";
+import { TextField, Typography, Box, IconButton, Grid } from "@mui/material";
 import { useState } from "react";
 import { GiSparkles } from 'react-icons/gi'
+import { GrCaretNext } from 'react-icons/gr'
 import female from '../assets/female.svg';
-// import femaleDisable from '../assets/femaleDisable.svg';
 import male from '../assets/male.svg';
-// import maleDisable from '../assets/maleDisable.svg';
+import hello from '../assets/hello.svg';
 import '../App.css';
 import { URL } from '../utils/Api';
 import { useNavigate } from 'react-router-dom';
@@ -41,8 +41,7 @@ const Page1 = () => {
             );
             result = await result.json();
             console.log(result);
-            if(result.message === "Successful")
-            {
+            if (result.message === "Successful") {
                 navigate("/page2")
             }
         } catch (error) {
@@ -54,39 +53,48 @@ const Page1 = () => {
 
     return (
         <>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                <Typography>What should we call you?<GiSparkles /></Typography>
-                <TextField
-                    label="Name"
-                    id="name"
-                    type="text"
-                    size="small"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    autoFocus
-                    required
-                />
-                <Typography>Gender<GiSparkles /></Typography>
+            <Grid container className="background-pic-page1">
+                <div className="root">
+                    <Grid item sm={12} md={12} className="main">
+                        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                            <Typography>What should we call you?<GiSparkles /></Typography>
+                            <TextField
+                                label="Name"
+                                id="name"
+                                type="text"
+                                size="medium"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                autoFocus
+                                required
+                            />
+                            <Typography>Gender<GiSparkles /></Typography>
 
-                <label>
-                    <input type="radio" name="gender" value="male" checked={gender === "male"} onChange={(e) => setGender(e.target.value)} required />
-                    <img src={male} alt="Option 1" />
-                </label>
-                {" "}
-                <label>
-                    <input type="radio" name="gender" value="female" checked={gender === "female"} onChange={(e) => setGender(e.target.value)} required />
-                    <img src={female} alt="Option 2" />
-                </label>
+                            <label>
+                                <input type="radio" name="gender" value="male" checked={gender === "male"} onChange={(e) => setGender(e.target.value)} required />
+                                <img src={male} alt="Option 1" />
+                            </label>
+                            {" "}
+                            <label>
+                                <input type="radio" name="gender" value="female" checked={gender === "female"} onChange={(e) => setGender(e.target.value)} required />
+                                <img src={female} alt="Option 2" />
+                            </label>
 
-                <Button
-                    type="submit"
-                    size="medium"
-                    variant="contained"
-                    sx={{ ml: 2, mt: 2, mb: 1 }}
-                >
-                    Next
-                </Button>
-            </Box>
+                            <IconButton
+                                type="submit"
+                                size="medium"
+                                variant="contained"
+                                sx={{ ml: 2, mt: 2, mb: 1 }}
+                            >
+                                <GrCaretNext />
+                            </IconButton>
+                        </Box>
+                        <Grid item sm={6} md={8} className="hello">
+                            <img style={{ height: "30vh", marginLeft:"150px" }} src={hello} alt="hello" />
+                        </Grid>
+                    </Grid>
+                </div>
+            </Grid>
         </>
     );
 }
