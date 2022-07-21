@@ -1,4 +1,4 @@
-import { TextField, Typography, Box, Button, Grid } from "@mui/material";
+import { TextField, Typography, Box, Button, Grid, Card } from "@mui/material";
 import { useState } from "react";
 import { GiSparkles } from 'react-icons/gi';
 import { GrCaretNext } from 'react-icons/gr';
@@ -53,9 +53,9 @@ const Page2 = () => {
         <>
             <Grid container className="background-pic">
                 <div className="root">
-                    <Grid item sm={12} md={12} className="main">
+                    <Grid item sm={12} md={12} className="main" data-aos="fade-up-left">
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                            <Typography>Where can we reach you?<GiSparkles /></Typography>
+                            <Typography fontFamily="Nunito" fontWeight="700" fontSize="30px">Where can we reach you?<GiSparkles /></Typography>
                             <TextField
                                 label="Email"
                                 id="email"
@@ -65,8 +65,9 @@ const Page2 = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 autoFocus
                                 required
+                                fontFamily="Nunito" fontWeight="700"
                             />
-                            <Typography>Preferred city to work?<GiSparkles /></Typography>
+                            <Typography fontSize="30px" fontFamily="Nunito" fontWeight="700">Preferred city to work?<GiSparkles /></Typography>
                             <TextField
                                 label="City"
                                 id="city"
@@ -76,28 +77,30 @@ const Page2 = () => {
                                 onChange={(e) => setCity(e.target.value)}
                                 autoFocus
                                 required
+                                fontFamily="Nunito" fontWeight="700"
                             />
-                            <Typography>Top cities you may prefer: </Typography>
+                            <Typography fontSize="20px" fontFamily="Nunito" fontWeight="700">Top cities you may prefer: </Typography>
                             <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
-                                <Box sx={{ height: "30px", backgroundColor: "cyan", mr: "2px", padding: "2px 2px 2px 2px" }}>Mumbai</Box>{" "}
-                                <Box>Bengaluru</Box>{" "}
-                                <Box>Pune</Box>{" "}
-                                <Box>Delhi</Box>{" "}
+                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>Mumbai</Card>{" "}
+                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>Bengaluru</Card>{" "}
+                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>Pune</Card>{" "}
+                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>Delhi</Card>{" "}
+
                             </Grid>
 
                             <Button
                                 type="submit"
                                 size="medium"
                                 variant="contained"
-                                sx={{ ml: 2, mt: 2, mb: 1 }}
-                                endIcon={<GrCaretNext style={{fill:"white"}}/>}
+                                sx={{ ml: 2, mt: 2, mb: 1, backgroundColor: "#6776FF", color: "black", fontFamily: "Nunito", fontWeight: "700", }}
+                                endIcon={<GrCaretNext style={{ fill: "white" }} />}
                             >
                                 Next
                             </Button>
                         </Box>
 
                         <Grid item sm={6} md={8} className="hello">
-                            <img style={{ height: "30vh", marginLeft:"200px" }} src={location} alt="hello" />
+                            <img style={{ height: "30vh", marginLeft: "200px" }} src={location} alt="hello" />
                         </Grid>
                     </Grid>
                 </div>

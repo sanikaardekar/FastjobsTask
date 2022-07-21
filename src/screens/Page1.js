@@ -55,9 +55,9 @@ const Page1 = () => {
         <>
             <Grid container className="background-pic">
                 <div className="root">
-                    <Grid item sm={12} md={12} className="main">
+                    <Grid item sm={12} md={12} className="main" data-aos="fade-up-left">
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                            <Typography>What should we call you?<GiSparkles /></Typography>
+                            <Typography fontSize="30px" fontFamily="Nunito" fontWeight="700">What should we call you?<GiSparkles /></Typography>
                             <TextField
                                 label="Name"
                                 id="name"
@@ -67,8 +67,9 @@ const Page1 = () => {
                                 onChange={(e) => setName(e.target.value)}
                                 autoFocus
                                 required
+                                fontFamily="Nunito" fontWeight="700"
                             />
-                            <Typography>Gender<GiSparkles /></Typography>
+                            <Typography fontSize="30px" fontFamily="Nunito" fontWeight="700">Gender<GiSparkles /></Typography>
 
                             <label>
                                 <input type="radio" name="gender" value="male" checked={gender === "male"} onChange={(e) => setGender(e.target.value)} required />
@@ -84,14 +85,14 @@ const Page1 = () => {
                                 type="submit"
                                 size="medium"
                                 variant="contained"
-                                sx={{ ml: 2, mt: 2, mb: 1 }}
-                                endIcon={<GrCaretNext style={{fill:"white"}}/>}
+                                sx={{ ml: 2, mt: 2, mb: 1, backgroundColor: "#6776FF", color: "black", fontFamily: "Nunito", fontWeight: "700", }}
+                                endIcon={<GrCaretNext style={{ fill: "white" }} />}
                             >
                                 Next
                             </Button>
                         </Box>
                         <Grid item sm={6} md={8} className="hello">
-                            <img style={{ height: "30vh", marginLeft:"150px" }} src={hello} alt="hello" />
+                            <img style={{ height: "30vh", marginLeft: "150px" }} src={hello} alt="hello" />
                         </Grid>
                     </Grid>
                 </div>

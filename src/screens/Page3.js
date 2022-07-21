@@ -6,6 +6,7 @@ import { URL } from '../utils/Api';
 import { useNavigate } from 'react-router-dom';
 import ClearIcon from '@mui/icons-material/Clear';
 import './Tags.css';
+import '../App.css';
 import rolesSvg from '../assets/roles.svg';
 
 const TagsInput = (props) => {
@@ -92,42 +93,42 @@ const Page3 = () => {
     return (
         <Grid container className="background-pic">
             <div className="root">
-                <Grid item sm={12} md={12} className="main">
+                <Grid item sm={12} md={12} className="main" data-aos="fade-up-left">
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                        <Typography>Roles you are looking for?<GiSparkles /></Typography>
+                        <Typography fontSize="30px" fontFamily="Nunito" fontWeight="700">Roles you are looking for?<GiSparkles /></Typography>
                         <TagsInput selectedTags={selectedTags} tagList={["ML Developer"]} roles={roles} setRoles={setRoles} />
-                        <Typography fontFamily="Poppins">Trending Roles: </Typography>
+                        <Typography fontSize="20px" fontFamily="Nunito" fontWeight="700">Trending Roles: </Typography>
                         <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
-                            <Card sx={{ height: "30px", mr: "4px", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF" }}>Web Developer</Card>{" "}
-                            <Card sx={{ height: "30px", mr: "4px", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF" }}>UI Developer</Card>{" "}
+                            <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>Web Developer</Card>{" "}
+                            <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF" }}>UI Developer</Card>{" "}
                         </Grid>
-                        <Typography>How many years of experience?<GiSparkles /></Typography>
+                        <Typography fontSize="30px" fontFamily="Nunito" fontWeight="700">How many years of experience?<GiSparkles /></Typography>
                         <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
                             <label>
                                 <input type="radio" name="experience" value="Fresher" checked={experience === "male"} onChange={(e) => setExperience(e.target.value)} required />
-                                <Box>Fresher</Box>
+                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>Fresher</Card>{" "}
                             </label>
                             {" "}
                             <label>
                                 <input type="radio" name="experience" value="1-3 years" checked={experience === "female"} onChange={(e) => setExperience(e.target.value)} required />
-                                <Box>1-3 years</Box>
+                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>1-3 years</Card>{" "}
                             </label>
                             {" "}
                             <label>
                                 <input type="radio" name="experience" value="3-6 years" checked={experience === "male"} onChange={(e) => setExperience(e.target.value)} required />
-                                <Box>3-6 years</Box>
+                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>3-6 years</Card>{" "}
                             </label>
                             {" "}
                             <label>
                                 <input type="radio" name="experience" value="6+ years" checked={experience === "female"} onChange={(e) => setExperience(e.target.value)} required />
-                                <Box>6+ years</Box>
+                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>6+ years</Card>{" "}
                             </label>
                         </Grid>
                         <Button
                             type="submit"
                             size="medium"
                             variant="contained"
-                            sx={{ ml: 2, mt: 2, mb: 1 }}
+                            sx={{ ml: 2, mt: 2, mb: 1, backgroundColor: "#6776FF", color: "black", fontFamily: "Nunito", fontWeight: "700", }}
                             endIcon={<GrCaretNext style={{ fill: "white" }} />}
                         >
                             Next
