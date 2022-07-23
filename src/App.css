@@ -19,6 +19,41 @@ img {
     outline: 2px solid black;
 }
 
+.ending {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    content: ' ';
+    display: block;
+    /* opacity: 0.9; */
+    background-image: url(./assets/ending.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: 50% 50%; */
+    overflow: hidden
+}
+.ending-root{
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.page {
+    height: 100vh !important;
+    width: 100vw !important;
+    background-color: white;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: Nunito;
+    font-display: white;
+}
+
 .background-pic {
     height: 100vh;
     width: 100vw;

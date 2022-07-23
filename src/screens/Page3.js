@@ -84,7 +84,7 @@ const Page3 = () => {
             result = await result.json();
             console.log(result);
             if (result.message === "Successful") {
-                navigate("/page1")
+                navigate("/end")
             }
             if (result.message === "Missing Field in a key") {
                 setErrorMessage('Please fill/select all details');
@@ -116,7 +116,7 @@ const Page3 = () => {
             <div className="root">
                 <Grid item sm={12} md={12} className="main" data-aos="fade-up-left">
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                        <Typography fontSize="20px" fontFamily="Nunito" fontWeight="700">Help us know you better!</Typography>
+                        <Typography fontSize="20px" fontFamily="Nunito" fontWeight="700" color="#6776FF">Help us know you better!</Typography>
 
                         <Grid item display="flex" flexDirection="row">
                             <Box style={{ width: "20px", height: "20px", borderRadius: "50%", backgroundColor: "#6776FF", border: "2px solid black" }}><Typography textAlign="center">1</Typography></Box>
