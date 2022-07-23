@@ -1,4 +1,4 @@
-import { Typography, Card, Button, Grid, Box, Snackbar, IconButton } from "@mui/material";
+import { Typography, Card, Button, Grid, Box, Snackbar, IconButton, CardActionArea } from "@mui/material";
 import React, { useState } from "react";
 import { GiSparkles } from 'react-icons/gi'
 import { GrCaretNext } from 'react-icons/gr';
@@ -136,22 +136,22 @@ const Page3 = () => {
                         <Grid item display="flex" flexDirection="row" justifyContent="flex-start">
                             <label>
                                 <input type="radio" name="experience" value="Fresher" checked={experience === "male"} onChange={(e) => setExperience(e.target.value)} required />
-                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>Fresher</Card>{" "}
+                                <CardActionArea><Card sx={{ fontSize:"18px", height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>Fresher</Card></CardActionArea>{" "}
                             </label>
                             {" "}
                             <label>
                                 <input type="radio" name="experience" value="1-3 years" checked={experience === "female"} onChange={(e) => setExperience(e.target.value)} required />
-                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>1-3 years</Card>{" "}
+                                <CardActionArea><Card sx={{ fontSize:"18px", height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>1-3 years</Card></CardActionArea>{" "}
                             </label>
                             {" "}
                             <label>
                                 <input type="radio" name="experience" value="3-6 years" checked={experience === "male"} onChange={(e) => setExperience(e.target.value)} required />
-                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>3-6 years</Card>{" "}
+                                <CardActionArea><Card sx={{ fontSize:"18px", height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>3-6 years</Card></CardActionArea>{" "}
                             </label>
                             {" "}
                             <label>
                                 <input type="radio" name="experience" value="6+ years" checked={experience === "female"} onChange={(e) => setExperience(e.target.value)} required />
-                                <Card sx={{ height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>6+ years</Card>{" "}
+                                <CardActionArea><Card sx={{ fontSize:"18px", height: "30px", mr: "4px", fontFamily: "Nunito", fontWeight: "700", padding: "2px 4px 4px 4px", borderRadius: "5px", color: "#6776FF", }}>6+ years</Card></CardActionArea>{" "}
                             </label>
                         </Grid>
                         <Button
