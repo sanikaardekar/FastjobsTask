@@ -1,11 +1,12 @@
-import { TextField, Typography, Box, Button, Grid, Card } from "@mui/material";
-import { useState } from "react";
+import { TextField, Typography, Box, Button, Grid, Card, Snackbar, IconButton } from "@mui/material";
+import React, { useState } from "react";
 import { GiSparkles } from 'react-icons/gi';
 import { GrCaretNext } from 'react-icons/gr';
 import { URL } from '../utils/Api';
 import { useNavigate } from 'react-router-dom';
 import '../App.css'
-import location from '../assets/location.svg'
+import location from '../assets/location.svg';
+import CloseIcon from '@mui/icons-material/Clear';
 
 const Page2 = () => {
     const navigate = useNavigate();
@@ -13,6 +14,12 @@ const Page2 = () => {
     const [email, setEmail] = useState("");
     const [city, setCity] = useState("");
     const [fill, setFill] = useState(true); //for dots
+    const [errorMessage, setErrorMessage] = useState(null) //for alert
+
+    const handleToClose = (event, reason) => {
+        if ("clickaway" == reason) return;
+        setErrorMessage(false);
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -42,6 +49,9 @@ const Page2 = () => {
             if (result.message === "Successful") {
                 navigate("/page3")
             }
+            if (result.message === "Missing Field in a key") {
+                setErrorMessage('Please fill/select all details');
+            }
         } catch (error) {
             console.log("Error" + error);
             alert("Please enter name and/or gender");
@@ -52,6 +62,18 @@ const Page2 = () => {
     return (
         <>
             <Grid container className="background-pic">
+                {errorMessage && <Snackbar open={errorMessage} message={errorMessage} onClose={handleToClose} action={
+                    <React.Fragment>
+                        <IconButton
+                            size="small"
+                            aria-label="close"
+                            color="inherit"
+                            onClick={handleToClose}
+                        >
+                            <CloseIcon fontSize="small" />
+                        </IconButton>
+                    </React.Fragment>
+                } />}
                 <div className="root">
                     <Grid item sm={12} md={12} className="main" data-aos="fade-up-left">
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
