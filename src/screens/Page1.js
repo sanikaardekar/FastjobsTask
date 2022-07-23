@@ -1,4 +1,4 @@
-import { TextField, Typography, Box, Button, Grid, Snackbar, IconButton } from "@mui/material";
+import { TextField, Typography, Box, Button, Grid, Snackbar, IconButton, Divider } from "@mui/material";
 import React, { useState } from "react";
 import { GiSparkles } from 'react-icons/gi'
 import { GrCaretNext } from 'react-icons/gr'
@@ -15,7 +15,6 @@ const Page1 = () => {
     const [setLoading] = useState(true);
     const [name, setName] = useState("");
     const [gender, setGender] = useState("male");
-    const [fill, setFill] = useState(true); //for dots
     const [errorMessage, setErrorMessage] = useState(false) //for alert
 
     const handleToClose = (event, reason) => {
@@ -79,6 +78,16 @@ const Page1 = () => {
                 <div className="root">
                     <Grid item sm={12} md={12} className="main" data-aos="fade-up-left">
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                            <Typography fontSize="20px" fontFamily="Nunito" fontWeight="700">Help us know you better!</Typography>
+
+                            <Grid item display="flex" flexDirection="row" >
+                                <Box style={{ width: "20px", height: "20px", borderRadius: "50%", backgroundColor: "white", border: "2px solid black" }}><Typography textAlign="center">1</Typography></Box>
+                                <Typography>---</Typography>
+                                <Box style={{ width: "20px", height: "20px", borderRadius: "50%", backgroundColor: "white", border: "2px solid black" }}><Typography textAlign="center">2</Typography></Box>
+                                <Typography>---</Typography>
+                                <Box style={{ width: "20px", height: "20px", borderRadius: "50%", backgroundColor: "white", border: "2px solid black" }}><Typography textAlign="center">3</Typography></Box>
+                            </Grid>
+
                             <Typography fontSize="30px" fontFamily="Nunito" fontWeight="700">What should we call you?<GiSparkles /></Typography>
                             <TextField
                                 label="Name"

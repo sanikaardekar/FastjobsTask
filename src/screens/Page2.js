@@ -13,7 +13,6 @@ const Page2 = () => {
     const [setLoading] = useState(true);
     const [email, setEmail] = useState("");
     const [city, setCity] = useState("");
-    const [fill, setFill] = useState(true); //for dots
     const [errorMessage, setErrorMessage] = useState(null) //for alert
 
     const handleToClose = (event, reason) => {
@@ -77,6 +76,15 @@ const Page2 = () => {
                 <div className="root">
                     <Grid item sm={12} md={12} className="main" data-aos="fade-up-left">
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                            <Typography fontSize="20px" fontFamily="Nunito" fontWeight="700">Help us know you better!</Typography>
+
+                            <Grid item display="flex" flexDirection="row">
+                                <Box style={{ width: "20px", height: "20px", borderRadius: "50%", backgroundColor: "#6776FF", border: "2px solid black" }}><Typography textAlign="center">1</Typography></Box>
+                                <Typography>---</Typography>
+                                <Box style={{ width: "20px", height: "20px", borderRadius: "50%", backgroundColor: "white", border: "2px solid black" }}><Typography textAlign="center">2</Typography></Box>
+                                <Typography>---</Typography>
+                                <Box style={{ width: "20px", height: "20px", borderRadius: "50%", backgroundColor: "white", border: "2px solid black" }}><Typography textAlign="center">3</Typography></Box>
+                            </Grid>
                             <Typography fontFamily="Nunito" fontWeight="700" fontSize="30px">Where can we reach you?<GiSparkles /></Typography>
                             <TextField
                                 label="Email"
