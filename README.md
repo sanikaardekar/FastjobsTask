@@ -1,5 +1,5 @@
 # FastjobsTask <br>
-I have implemented 3 pages and additional 2 pages as the landing page and an exit page <br>
+I have implemented the required 3 pages and additional 2 pages as the landing page and an exit page <br>
 I built the project on ReactJS using Material UI, AOS (Animation on Scroll) for the UI and Animations. <br>
 I also used canva and unDraw for illustrations <br>
 Project Hosted on Netlify : https://gilded-horse-21e959.netlify.app/    <br>
