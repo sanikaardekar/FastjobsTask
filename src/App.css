@@ -32,7 +32,9 @@ img {
     /* background-position: 50% 50%; */
     overflow: hidden
 }
-.ending-root{
+
+.ending-root,
+.landing-root {
     display: flex;
     flex-direction: column !important;
     justify-content: center;
@@ -40,13 +42,14 @@ img {
     height: 100vh;
     width: 100vw;
 }
+
 .page {
     height: 100vh !important;
     width: 100vw !important;
     background-color: white;
     display: flex;
     flex-direction: column !important;
-    justify-content: center;
+    justify-content: center !important;
     align-items: center;
     font-size: 25px;
     font-weight: 600;
@@ -92,6 +95,18 @@ img {
 
     .hello {
         display: none;
+    }
+
+    .landing-root {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .landing{
+        width:40vh;
+        margin-bottom: 100px;
     }
 }
 
