@@ -27,7 +27,6 @@ Landing Page, Page 1, Page 2 : <br>
 <br><br>
 Page 3, Ending Page : <br>
 ![image](https://user-images.githubusercontent.com/80094199/180641363-81d0e499-7542-45f4-9937-e94eb0470265.png)
-
 ![image](https://user-images.githubusercontent.com/80094199/180641313-3f80b3a9-4832-4bc7-8222-01444d5feee2.png)
 
 <br><br>
