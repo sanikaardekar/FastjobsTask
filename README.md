@@ -21,13 +21,11 @@ Exit Page : <br>
 <br><br>
 Responsiveness <br>
 Landing Page, Page 1, Page 2 : <br>
-![image](https://user-images.githubusercontent.com/80094199/180641099-cc9f7254-1cc5-490c-8a32-942e0c7f5b6b.png)
-![image](https://user-images.githubusercontent.com/80094199/180641116-44bb9e4a-502a-44a9-95e6-0c1fc759dcdb.png)
+![image](https://user-images.githubusercontent.com/80094199/180641099-cc9f7254-1cc5-490c-8a32-942e0c7f5b6b.png) ![image](https://user-images.githubusercontent.com/80094199/180641116-44bb9e4a-502a-44a9-95e6-0c1fc759dcdb.png)
 ![image](https://user-images.githubusercontent.com/80094199/180641136-e9386d99-3208-461a-a268-72a9b96a2ed9.png)
 <br><br>
 Page 3, Ending Page : <br>
-![image](https://user-images.githubusercontent.com/80094199/180641363-81d0e499-7542-45f4-9937-e94eb0470265.png)
-![image](https://user-images.githubusercontent.com/80094199/180641313-3f80b3a9-4832-4bc7-8222-01444d5feee2.png)
+![image](https://user-images.githubusercontent.com/80094199/180641363-81d0e499-7542-45f4-9937-e94eb0470265.png) ![image](https://user-images.githubusercontent.com/80094199/180641313-3f80b3a9-4832-4bc7-8222-01444d5feee2.png)
 
 <br><br>
 Shortcomings : Page 3 is not mobile responsive and "input of roles you are looking for" is taking a single array and the tags are displayed twice <br>
