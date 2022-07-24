@@ -1,6 +1,5 @@
 import '../App.css';
 import { Grid, Typography, Button } from '@mui/material';
-import Typewriter from "typewriter-effect";
 import { GrNext } from 'react-icons/gr';
 import Landing from '../assets/landing.svg';
 import { Link } from 'react-router-dom';

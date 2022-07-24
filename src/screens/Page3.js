@@ -55,13 +55,13 @@ const Page3 = () => {
     const [open, setOpen] = useState(false);
 
     const handleToClose = (event, reason) => {
-        if ("clickaway" == reason) return;
+        if ("clickaway" === reason) return;
         setOpen(false);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
+        //const data = new FormData(event.currentTarget);
         createacc();
     };
 

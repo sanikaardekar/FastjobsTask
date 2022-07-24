@@ -1,4 +1,4 @@
-import { TextField, Typography, Box, Button, Grid, Snackbar, IconButton, Divider } from "@mui/material";
+import { TextField, Typography, Box, Button, Grid, Snackbar, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import { GiSparkles } from 'react-icons/gi'
 import { GrCaretNext } from 'react-icons/gr'
@@ -19,13 +19,13 @@ const Page1 = () => {
     const [open, setOpen] = useState(false);
 
     const handleToClose = (event, reason) => {
-        if ("clickaway" == reason) return;
+        if ("clickaway" === reason) return;
         setOpen(false);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
+        //const data = new FormData(event.currentTarget);
         createacc();
     };
 
