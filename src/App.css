@@ -102,11 +102,22 @@ img {
         flex-direction: column !important;
         justify-content: center;
         align-items: center;
-        
+
     }
-    .landing{
-        width:40vh;
+
+    .landing {
+        width: 40vh;
         margin-bottom: 100px;
+    }
+
+    .ending-root {
+        display: flex;
+        flex-direction: column !important;
+        justify-content:center !important;
+        align-items: center !important;
+        margin-left: 130px;
+        
+        
     }
 }
 
