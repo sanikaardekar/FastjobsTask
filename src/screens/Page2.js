@@ -13,11 +13,12 @@ const Page2 = () => {
     const [setLoading] = useState(true);
     const [email, setEmail] = useState("");
     const [city, setCity] = useState("");
-    const [errorMessage, setErrorMessage] = useState(null) //for alert
+    const [errorMessage, setErrorMessage] = useState("") //for alert
+    const [open, setOpen] = useState(false)
 
     const handleToClose = (event, reason) => {
         if ("clickaway" == reason) return;
-        setErrorMessage(false);
+        setOpen(false);
     };
 
     const handleSubmit = (event) => {
@@ -27,7 +28,7 @@ const Page2 = () => {
     };
 
     async function createacc() {
-        console.log("hello");
+        // console.log("hello");
         try {
             let result = await fetch(
                 URL,
@@ -44,16 +45,17 @@ const Page2 = () => {
                 }
             );
             result = await result.json();
-            console.log(result);
+            // console.log(result);
             if (result.message === "Successful") {
                 navigate("/page3")
             }
             if (result.message === "Missing Field in a key") {
                 setErrorMessage('Please fill/select all details');
+                setOpen(true);
             }
         } catch (error) {
-            console.log("Error" + error);
-            alert("Please enter name and/or gender");
+            // console.log("Error" + error);
+            // alert("Please enter name and/or gender");
             setLoading(false);
         }
     }
@@ -61,7 +63,7 @@ const Page2 = () => {
     return (
         <>
             <Grid container className="background-pic">
-                {errorMessage && <Snackbar open={errorMessage} message={errorMessage} onClose={handleToClose} action={
+                {errorMessage && <Snackbar open={open} message={errorMessage} onClose={handleToClose} action={
                     <React.Fragment>
                         <IconButton
                             size="small"
