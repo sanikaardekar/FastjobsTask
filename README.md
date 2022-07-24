@@ -28,4 +28,3 @@ Page 3, Ending Page : <br>
 ![image](https://user-images.githubusercontent.com/80094199/180641363-81d0e499-7542-45f4-9937-e94eb0470265.png) ![image](https://user-images.githubusercontent.com/80094199/180641313-3f80b3a9-4832-4bc7-8222-01444d5feee2.png)
 
 <br><br>
-Shortcomings : Page 3 is not mobile responsive and "input of roles you are looking for" is taking a single array and the tags are displayed twice <br>
